@@ -1,6 +1,13 @@
 # CogentPHP
 A Socket Driven Framework for PHP Developers, and also a great starting point for beginners in PHP as the ADS has a small footprint and Docs of Third Party Packages included have a small Learning Point
 
+Sample Apps built on top of CogentPHP
+
+https://github.com/wilforlan/Automobile-Dianostic.git
+
+https://github.com/wilforlan/CogentBlog.git
+
+
 ## How to Install
 You should have composer installed.
 

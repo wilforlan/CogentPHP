@@ -1,0 +1,48 @@
+{% extends "layouts/layouts.html" %}
+{% import "macros/forms.html" as forms %}
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ parent() }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="jumbotron">
+		<div class="container">
+
+
+			<div class="row">
+				<div class="jumbotron jumbo-content">
+					<div class="col-md-12">
+						<div class="col-md-8">
+              <div class="animated zoomIn">
+                <h2>COGENTPHP </h2><h5>- Tiny Application Development Skeleton</h5>
+                <p class="answer">
+  								A Socket Driven Framework<br/>
+
+  							</p>
+
+              </div>
+
+
+						</div>
+						<div class="col-md-3">
+							<div class="view roller">
+								<div class="plane main">
+									<div class="circle"></div>
+									<div class="circle"></div>
+									<div class="circle"></div>
+									<div class="circle"></div>
+									<div class="circle"></div>
+									<div class="circle"></div>
+								</div>
+							</div>
+							<i class="ionicons ion-ios-lightbulb bulb-font"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

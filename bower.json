@@ -1,0 +1,14 @@
+{
+  "name": "WIlliams Isaac",
+  "description": "A Socket Driven PHP Framework",
+  "main": "index.php",
+  "keywords": [
+    "php",
+    "framework"
+  ],
+  "authors": [
+    "Williams Isaac"
+  ],
+  "license": "MIT",
+  "homepage": "www.cogentphp.io"
+}

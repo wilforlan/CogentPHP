@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+// application.php
+require 'src/AppBundle/Commands/CreateUserCommand.php';
+require 'vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use AppBundle\Command\CreateUserCommand;
+
+
+$application = new Application('Welcome to CogentPHP Console Developed By Williams Isaac', '0.1.0');
+$application->add(new CreateUserCommand());
+// ... register commands
+
+$application->run();

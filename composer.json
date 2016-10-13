@@ -1,0 +1,15 @@
+{
+    "require": {
+        "opis/database": "^3.6",
+        "opis/http-routing": "^4.0",
+        "opis/session": "^3.1",
+        "opis/cache": "^3.1",
+        "opis/storages": "^1.1",
+        "twig/twig": "~1.0",
+        "opis/container": "^2.3",
+        "symfony/console": "2.4.x-dev",
+        "symfony/event-dispatcher": "^3.1",
+        "ohmy/auth":"*",
+        "devture/form":"*"
+    }
+}

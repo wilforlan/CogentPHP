@@ -1,0 +1,26 @@
+
+{% macro open(name, class, action, enctype, method) %}
+<form class="{{ class}}" enctype="{{ enctype }}" action="{{ action }}" method="{{ method|default('POST') }}" name="{{ name }}">
+{% endmacro %}
+
+{% macro close() %}
+</form>
+{% endmacro %}
+
+{% macro input(name, class, value, type, size) %}
+<input type="{{ type|default('text') }}" name="{{ name }}" class="{{ class }}" value="{{ value|e }}" size="{{ size|default(20)
+}}" />
+{% endmacro %}
+
+{% macro textarea(name, class, value, type, size) %}
+<textarea type="{{ type|default('text') }}" name="{{ name }}" class="{{ class }}" value="{{ value|e }}" size="{{ size|default(20)
+}}"></textarea>
+{% endmacro %}
+
+{% macro button(name, class, tile, type) %}
+<button type="{{ type|default('submit') }}" name="{{ name }}" class="{{ class }}">{{ tile }}</button>
+{% endmacro %}
+
+{% macro select(name, class, value) %}
+<select name="{{ name }}" class="{{ class }}" value="{{ value|e }}"></select>
+{% endmacro %}

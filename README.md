@@ -1,6 +1,21 @@
 # CogentPHP
 A Socket Driven Framework for PHP Developers, and also a great starting point for beginners in PHP as the ADS has a small footprint and Docs of Third Party Packages included have a small Learning Point
 
+## How to Install
+You should have composer installed.
+	if($this->composerInstalled == null){
+		$this->load('http://getcomposer.org/');
+		}
+	elseif(isset($this->composerInstalled)){
+		$cmd->runCommand('Composer Install');	
+		}
+	echo 'Installation Complete';
+		$cmd->runCommand('php -S localhost:3000');
+
+Funny right ?
+ Run Composer Install while you cd to where you cloned this repo to
+ then run php -S localhost:3000
+
 ## Why should I contribute ?
 Never seen a PHP Framework that supports asynchronous because the Parent only supports synchronous, as the need for real-time data feed on the web is ever increasing, I think we should at least give back to our community by creating things that are really helpful for beginners because most of then get turn on by the possibilities of other languages.
 

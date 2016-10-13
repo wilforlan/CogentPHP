@@ -3,12 +3,13 @@ A Socket Driven Framework for PHP Developers, and also a great starting point fo
 
 ## How to Install
 You should have composer installed.
+
 	if($this->composerInstalled == null){
 		$this->load('http://getcomposer.org/');
-		}
+	}
 	elseif(isset($this->composerInstalled)){
 		$cmd->runCommand('Composer Install');	
-		}
+	}
 	echo 'Installation Complete';
 		$cmd->runCommand('php -S localhost:3000');
 

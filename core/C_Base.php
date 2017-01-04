@@ -9,8 +9,6 @@ namespace Core\Core;
 *
 */
 class C_Base{
-
-
     function __construct()
     {
 

@@ -1,9 +1,13 @@
 <?php
-/**CogentPHP ADS Developed by Williams Isaac
- *Include the neccesary Class (Init) For intialization of the System
- *Note:: This Index will not work without the include file set to the right path!
- * < williamscalg@gmail.com >
- */
+
+/*
+*---------------------------------------------------------------
+* CogentPHP ADS Developed by Williams Isaac
+*---------------------------------------------------------------
+*
+*Include the neccesary Class (Init) For intialization of the System
+*Note:: This Index will not work without the include file set to the right path!
+*/
 
 require 'core/app.php';
 require 'vendor/autoload.php';
@@ -12,7 +16,7 @@ require 'LoadCore.php';
 
 $app = new Init;
 
-define('ENVIRONMENT', 'development');
+define('ENVIRONMENT', 'production');
 /*
 *---------------------------------------------------------------
 * ERROR REPORTING
@@ -216,7 +220,8 @@ switch (Init::is_slash($server))
 				 *This works in only when the Url doesnt have a parameter
 				 *@return void;
 				 */
-            	print $ControllerObj->index();
+				 				print $ControllerObj->index();
+
             }
 
 		}

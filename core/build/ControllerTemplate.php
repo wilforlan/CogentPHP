@@ -5,9 +5,10 @@
 use Core\Core\C_Base;
 use Core\Core\Redirect;
 
-class IndexController extends C_Base
+class controllername extends C_Base
   {
-  	function __construct( $tile )
+  	private $model;
+  	function __construct($tile)
   	{
       /** Loading the corresponding Model class **/
   		$this->model = new $tile;
@@ -18,7 +19,5 @@ class IndexController extends C_Base
       /** Initializing a index.html view Found in (Views/index.html) **/
       Init::view('index');
   	}
-
-
 }
  ?>

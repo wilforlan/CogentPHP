@@ -1,15 +1,21 @@
 #!/usr/bin/env php
 <?php
 // application.php
-require 'src/AppBundle/Commands/CreateUserCommand.php';
+require 'src/AppBundle/Commands/CreateControllerCommand.php';
+require 'src/AppBundle/Commands/CreateModelCommand.php';
+require 'src/AppBundle/Commands/HttpRequestHandler.php';
 require 'vendor/autoload.php';
 
 use Symfony\Component\Console\Application;
-use AppBundle\Command\CreateUserCommand;
+use AppBundle\Commands\CreateControllerCommand;
+use AppBundle\Commands\CreateModelCommand;
+use AppBundle\Commands\HttpRequestHandler;
 
 
 $application = new Application('Welcome to CogentPHP Console Developed By Williams Isaac', '0.1.0');
-$application->add(new CreateUserCommand());
+$application->add(new CreateControllerCommand());
+$application->add(new CreateModelCommand());
+$application->add(new HttpRequestHandler());
 // ... register commands
 
 $application->run();

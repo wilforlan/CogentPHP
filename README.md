@@ -29,7 +29,7 @@ Routing is a very essential part of a Web Application. CogentPHP has an simple y
 	<?php
 
 	/** Autoloading The required Classes **/
-	
+
 	use Core\Core\C_Base;
 	use Core\Core\Redirect;
 
@@ -47,6 +47,40 @@ Routing is a very essential part of a Web Application. CogentPHP has an simple y
 	      Init::view('index');
 	  	}
 
+			public function pay()
+	  	{
+	      /** Initializing a index.html view Found in (Views/index.html) **/
+	      Init::view('index');
+	  	}
+
+			public function withdraw()
+	  	{
+	      /** Initializing a index.html view Found in (Views/index.html) **/
+	      Init::view('index');
+	  	}
 
 	}
 	 ?>
+
+To generate URL from the Above controller, We have
+
+	localhost/account/
+		The URL Maps to accountController -> index()
+		Since no Method is Specified in URL, It maps it to index method by default.
+
+	localhost/account/pay
+	 	This URL Maps to accountController -> pay()
+	localhost/account/withdraw
+	 	This URL Maps to accountController -> withdraw()
+	localhost/account/begin
+	 	This results in a 404 error, Because the method begin() doesn't exist in the Class
+
+
+	The URL is Case Insensitive as:
+
+	accountController -> withdrawMoney() ==
+
+	1. localhost/account/withdrawmoney
+	2. localhost/account/withdrawMoney
+
+		They Both Evaluate to the same Method

@@ -19,6 +19,11 @@ class IndexController extends C_Base
       Init::view('index');
   	}
 
+    public function payMe()
+    {
+      return "Pay ME";
+    }
+
 
 }
  ?>

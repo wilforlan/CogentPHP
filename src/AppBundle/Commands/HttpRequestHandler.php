@@ -27,39 +27,31 @@ class HttpRequestHandler extends Command
   {
     // outputs multiple lines to the console (adding "\n" at the end of each line)
     $http = HttpClient::getInstance();
+    $output->writeln([
+      "<comment>Executing Command -> app:request-url {$input->getArgument('requesturl')}</comment>",
+      '**************************************************',
+    ]);
 
-    $data = [];
-    $param = $input->getArgument('params');
-    $result = explode(':', $param);
-    foreach ($result as $key) {
+    $execute = $http->makeRequest($input->getArgument('requesturl'),$input->getArgument('method'),$input->getArgument('params'));
 
+    if ($execute->status) {
+      $output->writeln([
+        "<bg=green;options=bold>{$execute->message}</>",
+        '**************************************************',
+      ]);
+      $result = ['statusCode' => $execute->data->code, 'body' => $execute->data->body];
+      print_r($result);
+      $output->writeln([
+        "<bg=blue;options=bold>Raw Body: {$execute->data}</>",
+        '**************************************************',
+      ]);
     }
-    print_r($data);
-    // $output->writeln([
-    //   "<comment>Executing Command -> app:request-url {$input->getArgument('requesturl')}</comment>",
-    //   '**************************************************',
-    // ]);
-    //
-    // $execute = $http->makeRequest($input->getArgument('requesturl'),$input->getArgument('method'),$input->getArgument('params'));
-    //
-    // if ($execute->status) {
-    //   $output->writeln([
-    //     "<bg=green;options=bold>{$execute->message}</>",
-    //     '**************************************************',
-    //   ]);
-    //   $result = ['statusCode' => $execute->data->code, 'body' => $execute->data->body];
-    //   print_r($result);
-    //   $output->writeln([
-    //     "<bg=blue;options=bold>Raw Body: {$execute->data}</>",
-    //     '**************************************************',
-    //   ]);
-    // }
-    // else {
-    //   $output->writeln([
-    //     "<bg=red;options=bold>{$execute->message}</>",
-    //     '**************************************************',
-    //   ]);
-    // }
+    else {
+      $output->writeln([
+        "<bg=red;options=bold>{$execute->message}</>",
+        '**************************************************',
+      ]);
+    }
     // $output->writeln([]), $input->getArgument('method')]);
 
 

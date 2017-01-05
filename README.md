@@ -91,3 +91,29 @@ To generate URL from the Above controller, We have
 	2. localhost/account/withdrawMoney
 
 		They Both Evaluate to the same Method
+
+** Using The Command Line **
+
+	Available Command List:
+
+	php cogent app:create-controller [controllerName] [options]
+
+		controllerName 	-> Name of the Controller to be generated.
+		options 				-> Generation Options
+			Available Options
+				withModel -> This Option Generate a Model File to the Model Directory for the corresponding Controller
+
+	php cogent app:create-model [modelName] [options]
+
+		modelName 			-> Name of the Model to be generated.
+		options 				-> Generation Options
+			Available Options
+				withController -> This Option Generate a Controller File to the Controllers Directory for the corresponding Model
+
+	php cogent app:request-url [url] [method]
+
+		url 						-> URL that you want to make request to. Do not omit http://
+		method	 				-> Request Method: Default is GET
+			Available Method
+			GET 	-> Send Request using GET
+			POST 	-> Sends Request with POST, Using HTTP Build Query to Build Params

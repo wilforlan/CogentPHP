@@ -18,6 +18,9 @@ In your browser, Open localhost/CogentPHP
 
 ## Guide
 
+Sample Projects Exist at:
+		https://github.com/wilforlan/CogentBlog
+		https://github.com/wilforlan/Automobile-Dianostic
 **Routing**
 
 Routing is a very essential part of a Web Application. CogentPHP has an simple yet elegant way of handling routing.

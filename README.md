@@ -92,7 +92,7 @@ To generate URL from the Above controller, We have
 
 		They Both Evaluate to the same Method
 
-** Using The Command Line **
+**Command Line**
 
 	Available Command List:
 

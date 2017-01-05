@@ -16,11 +16,11 @@ class HttpRequestHandler extends Command
   {
     $this
     ->addArgument('requesturl', InputArgument::REQUIRED, 'Name Of The Controller to Generate.')
-    ->addArgument('method', InputArgument::OPTIONAL, 'Enter withController if you Want to Generate a Controller')
-    ->addArgument('params', InputArgument::OPTIONAL, 'Enter withController if you Want to Generate a Controller')
+    ->addArgument('method', InputArgument::OPTIONAL, 'Request Method. Default -> GET... Available Method -> [GET, POST]')
+    ->addArgument("params", InputArgument::OPTIONAL, "Request Parameters. In an Array Format. Sample ['name' => 'John Doe']")
     ->setName('app:request-url')
-    ->setDescription('Creates new Model.')
-    ->setHelp("This command allows you to create new Model...");
+    ->setDescription('Perform HTTP Request on Console.')
+    ->setHelp("This Command Allow to Perform CURL HTTP Request On Command Line...");
   }
 
   protected function execute(InputInterface $input, OutputInterface $output)
@@ -28,12 +28,39 @@ class HttpRequestHandler extends Command
     // outputs multiple lines to the console (adding "\n" at the end of each line)
     $http = HttpClient::getInstance();
 
-    $output->writeln([
-      "<comment>Executing Command -> app:request-url {$input->getArgument('requesturl')}</comment>",
-      '**************************************************',
-    ]);
+    $data = [];
+    $param = $input->getArgument('params');
+    $result = explode(':', $param);
+    foreach ($result as $key) {
 
-    $output->writeln([$http->validUrl($input->getArgument('requesturl')), $input->getArgument('method')]);
+    }
+    print_r($data);
+    // $output->writeln([
+    //   "<comment>Executing Command -> app:request-url {$input->getArgument('requesturl')}</comment>",
+    //   '**************************************************',
+    // ]);
+    //
+    // $execute = $http->makeRequest($input->getArgument('requesturl'),$input->getArgument('method'),$input->getArgument('params'));
+    //
+    // if ($execute->status) {
+    //   $output->writeln([
+    //     "<bg=green;options=bold>{$execute->message}</>",
+    //     '**************************************************',
+    //   ]);
+    //   $result = ['statusCode' => $execute->data->code, 'body' => $execute->data->body];
+    //   print_r($result);
+    //   $output->writeln([
+    //     "<bg=blue;options=bold>Raw Body: {$execute->data}</>",
+    //     '**************************************************',
+    //   ]);
+    // }
+    // else {
+    //   $output->writeln([
+    //     "<bg=red;options=bold>{$execute->message}</>",
+    //     '**************************************************',
+    //   ]);
+    // }
+    // $output->writeln([]), $input->getArgument('method')]);
 
 
   }

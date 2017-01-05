@@ -27,25 +27,50 @@ class HttpClient
 
   public function validUrl($url)
   {
-    // $data =  array(
-    //   'user_email'          => 'admin@riby.me',
-    //   'user_password'       => 'aloz2089'
-    //   );
-    // $response = API::post($url)
-    //            ->body(http_build_query($data))
-    //            ->addHeader('Content-Type','application/x-www-form-urlencoded')
-    //            ->addHeader('charset', 'utf-8')
-    //            ->addHeader('Accept', 'application/json')
-    //            ->send();
-    $response = API::get($url)
-                // ->expectsJson()
-                ->send();
-
-    // return json_decode($response, JSON_PRETTY_PRINT);
-    return $response;
+    if (filter_var($url, FILTER_VALIDATE_URL)) {
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 
-
+  public function makeRequest($url, $method = 'GET' ,$param = null)
+  {
+    switch ($method) {
+      case 'GET':
+      $response = API::get($url)
+                  ->send();
+          return (object)[
+            'status' => true,
+            'message' => 'Request Completed Successfully',
+            'data' => $response
+          ];
+        break;
+      case 'POST':
+      if (!sizeof($param)) {
+        return (object)[
+          'status' => false,
+          'message' => 'Cannot Send Empty Parameters with POST Method, Use GET Method Instead'
+        ];
+      }
+      $response = API::post($url)
+                 ->body(http_build_query($param))
+                 ->addHeader('Content-Type','application/x-www-form-urlencoded')
+                 ->addHeader('charset', 'utf-8')
+                 ->addHeader('Accept', 'application/json')
+                 ->send();
+         return (object)[
+           'status' => true,
+           'message' => 'Request Completed Successfully',
+           'data' => $response
+         ];
+        break;
+      default:
+        # code...
+        break;
+    }
+  }
 }
 
 

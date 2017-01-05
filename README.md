@@ -9,9 +9,10 @@ If you dont already have composer,
 
 After Installing Composer,
 Run
-	git clone https://github.com/wilforlan/CogentPHP.git CogentPHP
 
+	git clone https://github.com/wilforlan/CogentPHP.git CogentPHP
 	cd path_to_file/CogentPHP && php -S localhost:3000
+
 OR
 In your browser, Open localhost/CogentPHP
 
